@@ -46,6 +46,8 @@ public class CPT extends Application {
         System.out.println("Hi");
         System.out.println("Hi2.0");
         ArrayList<Shape> obj = new ArrayList<>();
+        
+        System.out.println("yes");
 
         Group root = new Group();
 
