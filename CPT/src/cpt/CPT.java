@@ -45,6 +45,8 @@ public class CPT extends Application {
     public void start(Stage primaryStage) {
         System.out.println("Hi");
         ArrayList<Shape> obj = new ArrayList<>();
+        
+        System.out.println("yes");
 
         Group root = new Group();
 
