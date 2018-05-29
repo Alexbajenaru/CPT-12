@@ -45,6 +45,7 @@ public class CPT extends Application {
     public void start(Stage primaryStage) {
         System.out.println("Hi");
         System.out.println("Hi2.0");
+        System.out.println("Hi 3.0");
         ArrayList<Shape> obj = new ArrayList<>();
         
         System.out.println("yes");
