@@ -43,6 +43,7 @@ public class CPT extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        System.out.println("Hi");
         ArrayList<Shape> obj = new ArrayList<>();
 
         Group root = new Group();
