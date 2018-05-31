@@ -31,7 +31,7 @@ import javafx.stage.Stage;
  */
 public class CPT extends Application {
 
-    Stage primaryStage;
+    static Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) {
@@ -43,32 +43,44 @@ public class CPT extends Application {
     }
 
     public static void runStage1(Stage primaryStage) {
-        Room room1 = new Room();
+        Scene1 room1 = new Scene1();
         primaryStage.setScene(room1.getScene());
         primaryStage.show();
         Rectangle rect = new Rectangle(100, 0, 100, 50);
+        //Rectangle door = new Rectangle(480, 420, 20, 80);
         
         room1.getRoot().getChildren().addAll(rect, room1.getCharacter());
 
-        room1.update();        
+        room1.update();
     }
 
     public static void runStage2(Stage primaryStage) {
-        Room room2 = new Room();
+        Scene2 room2 = new Scene2();
         primaryStage.setScene(room2.getScene());
         primaryStage.show();
         
         room2.getRoot().getChildren().addAll(room2.getCharacter());
+        
+        room2.update();
     }
 
     public static void runStage3(Stage primaryStage) {
-        Room room3 = new Room();
-        primaryStage.setScene(room3.getScene());
+        //Room room3 = new Room();
+       // primaryStage.setScene(room3.getScene());
         primaryStage.show();
         
-        room3.getRoot().getChildren().addAll(room3.getCharacter());
+        //room3.getRoot().getChildren().addAll(room3.getCharacter());
     } 
 
+    public static Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
+    public static void setPrimaryStage(Stage primaryStage) {
+        CPT.primaryStage = primaryStage;
+    }
+
+    
     
     
     

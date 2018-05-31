@@ -4,17 +4,17 @@ import javafx.scene.shape.Shape;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
+import javafx.scene.shape.Rectangle;
 
-public class Room {
+public abstract class Room {
 
     private Group root = new Group();
     private Scene scene = new Scene(root, 500, 500);
     private Character character = new Character(200, 200, true, 30, 40);
+    private Rectangle nextDoor = new Rectangle(20, 80);
+    private Rectangle previousDoor = new Rectangle(20, 80);
 
-    public Room() {
-        this.root = root;
-        this.scene = scene;
-        this.character = character;
+    public Room() {  
     }
 
     public Character getCharacter() {
