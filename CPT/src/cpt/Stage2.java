@@ -1,45 +1,28 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package cpt;
 
-import javafx.scene.shape.Shape;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 
-public class Room {
+/**
+ *
+ * @author Daniel Bassani
+ */
+public class Stage2 extends Room {
 
-    private Group root = new Group();
-    private Scene scene = new Scene(root, 500, 500);
-    private Character character = new Character(200, 200, true, 30, 40);
+    private Group root = this.getRoot();
+    private Scene scene = this.getScene();
+    private Character character = this.getCharacter();
+    private Rectangle nextDoor = new Rectangle(0, 420, 20, 80);
 
-    public Room() {
-
-    }
-
-    public Character getCharacter() {
-        return character;
-    }
-
-    public Group getRoot() {
-        return root;
-    }
-
-    public Scene getScene() {
-        return scene;
-    }
-
-    public void setCharacter(Character character) {
-        this.character = character;
-    }
-
-    public void setRoot(Group root) {
-        this.root = root;
-    }
-
-    public void setScene(Scene scene) {
-        this.scene = scene;
-    }
-
+    @Override
     public void update() {
         scene.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.LEFT) {
@@ -61,6 +44,7 @@ public class Room {
                         character.setTranslateX(character.getTranslateX() - 10);
                     }
                 }
+
             } else if (e.getCode() == KeyCode.DOWN) {
                 character.setTranslateY(character.getTranslateY() + 10);
 
@@ -70,6 +54,7 @@ public class Room {
                         character.setTranslateY(character.getTranslateY() - 10);
                     }
                 }
+
             } else if (e.getCode() == KeyCode.UP) {
                 character.setTranslateY(character.getTranslateY() - 10);
 
@@ -79,7 +64,9 @@ public class Room {
                         character.setTranslateY(character.getTranslateY() + 10);
                     }
                 }
+
             }
         });
     }
+
 }

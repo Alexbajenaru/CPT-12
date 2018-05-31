@@ -32,6 +32,7 @@ import javafx.stage.Stage;
 public class CPT extends Application {
 
     static Stage primaryStage;
+    static int num = 0;
 
     @Override
     public void start(Stage primaryStage) {
@@ -43,46 +44,53 @@ public class CPT extends Application {
     }
 
     public static void runStage1(Stage primaryStage) {
-        Scene1 room1 = new Scene1();
+        Stage1 room1 = new Stage1();
         primaryStage.setScene(room1.getScene());
         primaryStage.show();
         Rectangle rect = new Rectangle(100, 0, 100, 50);
-        //Rectangle door = new Rectangle(480, 420, 20, 80);
-        
-        room1.getRoot().getChildren().addAll(rect, room1.getCharacter());
 
-        room1.update();
+        Rectangle door = new Rectangle(480, 420, 20, 80);
+
+        room1.getRoot().getChildren().addAll(rect, door, room1.getCharacter());
+
+        room1.update();   
     }
 
     public static void runStage2(Stage primaryStage) {
-        Scene2 room2 = new Scene2();
+        Group root = new Group();
+        primaryStage.setScene(new Scene(root, 500, 500));
+        Stage2 room2 = new Stage2();
         primaryStage.setScene(room2.getScene());
         primaryStage.show();
-        
+
         room2.getRoot().getChildren().addAll(room2.getCharacter());
-        
+//        
         room2.update();
     }
 
     public static void runStage3(Stage primaryStage) {
         //Room room3 = new Room();
-       // primaryStage.setScene(room3.getScene());
+        // primaryStage.setScene(room3.getScene());
         primaryStage.show();
-        
+
         //room3.getRoot().getChildren().addAll(room3.getCharacter());
-    } 
+    }
 
     public static Stage getPrimaryStage() {
         return primaryStage;
     }
 
-    public static void setPrimaryStage(Stage primaryStage) {
-        CPT.primaryStage = primaryStage;
+    public void setPrimaryStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
     }
 
-    
-    
-    
+    public static void setNum(int num) {
+        CPT.num = num;
+    }
+
+    public static int getNum() {
+        return num;
+    }
     
     
 }
